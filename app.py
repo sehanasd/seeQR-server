@@ -19,11 +19,14 @@ def model_prediction():
     prediction = get_prediction_from_url(url)
 
     return jsonify({'prediction': prediction})
-    
-@app.route('/', methods=['GET'])
-def  hello():
-    return "Hello World!"
-    
+
+try:
+    @app.route('/', methods=['GET'])
+    def hello():
+        return "Hello World!"
+
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
 
 if __name__ == '__main__':
     app.run(debug=False)
