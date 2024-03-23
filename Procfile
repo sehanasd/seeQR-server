@@ -1,1 +1,1 @@
-web : gunicorn model_pred:app
+web : gunicorn app:app
