@@ -191,7 +191,7 @@ def main(url):
 def get_prediction_from_url(test_url):
     features_test = main(test_url)
     features_test = np.array(features_test).reshape((1, -1))
-    load_model = joblib.load('Server/compressed_model.joblib')
+    load_model = joblib.load('compressed_model.joblib')
     pred = load_model.predict(features_test)
     if int(pred[0]) == 0:
 
